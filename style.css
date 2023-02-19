@@ -11,8 +11,10 @@ ul {
 body {
   background-color: #121214;
   background-image: url(./assets/bg.svg);
-  background-position-x: center;
+  background-position-x: top center;
   background-position-y: -715px; 
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body * {
@@ -22,6 +24,7 @@ body * {
 #app {
   width: fit-content;
   margin: 52px auto;
+  padding-top: 52px;
 }
 
 header {
@@ -93,4 +96,39 @@ header {
 
   text-align: cent;
   color: #E1E1E6;
+}
+
+.card h2:hover,
+.card ul li strong:hover,
+.card ul li img:hover {
+  transform: scale(1.1);
+}
+
+.card h2:hover,
+.card ul li strong,
+.card ul li img {
+  transition: 0.3s;
+}
+
+.card {
+  opacity: 0;
+  animation: appear .2s forwards;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 700px) {
+  #cards {
+    max-width: 670px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
